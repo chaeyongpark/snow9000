@@ -45,7 +45,7 @@
 		<img src="{% static 'img/banner.jpg' %}" class="img-fluid">
 
 		<div class="container-fluid" style="padding-top: 10px">
-			<div class="main-text text-center">
+			<div class="main-text">
 				<p id="time"></p>
 			</div>
 		
@@ -102,9 +102,13 @@
 				$('.carousel').carousel({
 					interval: 2000
 				});
-				$('.main-text').css("top", $(window).height()/2 - $('.main-text').height());
 			});
-
+				
+			setTimeout(function() {
+				$('.main-text').css("margin-top", -$('.main-text').height()/2 + "px");
+				$('.main-text').css("margin-left", -$('.main-text').width()/2 + "px");
+				$('.main-text').css("filter", "opacity(100%)");
+			}, 300);
 			$('.carousel img').each(function() {
 				var $src = $(this).attr('src');
 				var $color = $(this).attr('data-color');
