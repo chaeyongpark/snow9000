@@ -25,7 +25,7 @@ SECRET_KEY = 'szqok_l)j0%k=r5ke2d(7w+v4@1*&&vp_^tr8(u0gn9-nitee_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pbs.postech.ac.kr', 'ubuntu.poapper.com']
+ALLOWED_HOSTS = ['pbs.postech.ac.kr', 'ubuntu.poapper.com', 'snow9000.ga']
 
 
 # Application definition
