@@ -8,6 +8,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+		<meta property="og:title" content="김준석 탄생 9000일">
+		<meta property="og:description" content="환경공학부 김준석 학우의 9000일 탄생 축하 페이지입니다.">
+		<meta property="og:image" content="{% static 'img/main1.jpg' %}">
+
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
 		 integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -87,20 +91,30 @@
 		<!-- Profile -->
 		<div class="profile" style="padding-top: 10px">
 			<h3><b>김준석 그는 어떤 사람인가</b></h3>
+			{% for p in profile %}
+			<p>{{ p.prof }} </p>
+			{% endfor %}
 		</div>
 
 		<!-- Sponsor -->
 		<div class="sponsor" style="padding-top: 10px">
 			<h3><b>후원자</b></h3>
 			{% for s in sponsor %}
-			<button type="button" class="btn btn-outline-warning">{{ s.name }}</button>
+			<button type="button" class="btn btn-outline-secondary">{{ s.name }}</button>
 			{% endfor %}
 		</div>
 
 		<script type="text/javascript">
+			$(window).resize(function() {
+				$('.main-text').css("margin-top", -$('.main-text').height()/2 + "px");
+				$('.main-text').css("margin-left", -$('.main-text').width()/2 + "px");
+				$('.main-text').css("filter", "opacity(100%)");
+			});
+
 			$(document).ready(function() {
 				$('.carousel').carousel({
-					interval: 2000
+					interval: 2000,
+					pause: "false",
 				});
 			});
 				
@@ -108,7 +122,7 @@
 				$('.main-text').css("margin-top", -$('.main-text').height()/2 + "px");
 				$('.main-text').css("margin-left", -$('.main-text').width()/2 + "px");
 				$('.main-text').css("filter", "opacity(100%)");
-			}, 300);
+			}, 600);
 			$('.carousel img').each(function() {
 				var $src = $(this).attr('src');
 				var $color = $(this).attr('data-color');
@@ -165,7 +179,7 @@
 				time.innerHTML = DateDiff.inHours(current, goal) + ":" + DateDiff.inMinutes(current, goal) + ":" + DateDiff.inSeconds(current, goal);
 			}
 
-			setInterval(setTime, 100);
+			setInterval(setTime, 500);
 		</script>
 	</body>
 </html>

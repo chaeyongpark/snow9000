@@ -15,7 +15,7 @@ class Profile(models.Model):
     prof = models.CharField(max_length = 128)
 
     def __str__(self):
-        return self.porf
+        return self.prof
 
 @python_2_unicode_compatible
 class Sponsor(models.Model):

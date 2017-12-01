@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
 .main-filter {
     -webkit-filter: brightness(60%);
     -moz-filter: brightness(60%);
     -o-filter: brightness(60%);
     -ms-filter: brightness(60%);
-    filter: grayscale(20%) opacity(70%);
+    filter: grayscale(20%) opacity(70%) brightness(50%);
 }
 .main-text {
     position: absolute;
@@ -21,10 +23,39 @@
 	background-repeat: no-repeat;
 }
 .profile {
-	background-color: #123;
+	background-color: #868e96;
 	color: white;
 	text-align: center;
+	padding: 10px 0;
 }
+
+.profile p {
+	margin-bottom: 5px;
+}
+
 .sponsor {
 	text-align: center;
+	padding: 0 10px;
+}
+
+.sponsor button {
+	margin-bottom: 10px;
+}
+
+p#time {
+	color: white;
+	font-family: 'Roboto Mono', monospace;
+}
+
+@media screen and (max-width: 320px) {
+	.profile h3 {
+		font-size: 20px;
+	}
+
+	.sponsor h3 {
+		font-size: 20px;
+	}
+
+	.profile p {
+		font-size: 13px;
 }
